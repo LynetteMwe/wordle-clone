@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Wordle from './components/Wordle'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+
 
 function App() {
+  const [solution, setSolution] = useState(null)
+
+  useEffect(()=>{
+    fetch('http://localhost:3001/solutions')
+    .then(res => res.json())
+    .then(json=>{
+      const randomSln = json[Math.floor(Math.random() * json.length)]
+      setSolution(randomSln.word)
+    })
+  },[setSolution])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container className="App"
+      align='center'
+    >
+      <Typography
+        variant='h4'
+        color='textsecondary'        
+        gutterBottom
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+        Wordle
+      </Typography>
+      
+      {solution && <Wordle solution={solution} />}
+    </Container>
   );
 }
 
