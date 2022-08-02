@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Wordle from './components/Wordle'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-
+import NavBar from './components/NavBar'
+import ThemeContextProvider from './contexts/ThemeContext'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
   const [solution, setSolution] = useState(null)
@@ -18,19 +18,13 @@ function App() {
 
 
   return (
-    <Container className="App"
-      align='center'
-    >
-      <Typography
-        variant='h4'
-        color='textsecondary'        
-        gutterBottom
-        >
-        Wordle
-      </Typography>
-      
-      {solution && <Wordle solution={solution} />}
-    </Container>
+    <ThemeContextProvider>
+      <div className="App" align='center'>
+        <NavBar/> 
+        {solution && <Wordle solution={solution} />}  
+        {/* <ThemeToggle/>       */}
+      </div>
+    </ThemeContextProvider>
   );
 }
 
