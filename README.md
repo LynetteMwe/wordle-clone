@@ -10,6 +10,9 @@ To start the server, in the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+### `npm run json`
+
+Runs the json file
 
 ### `npm test`
 
@@ -28,9 +31,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 ## Installing dependencies
-The words for the game together with the values of the keypad are stored in a json file (db.json).
-To install json-server, run:
-### `$ npm install -g jsonserver`
+After cloning the repo/code, you'll need to run `npm install` in the project directory to install any project dependencies first.
 
-To run the json-server (on a different terminal from the one running `npm start`):
-### `npx json-server --watch data/db.json --port 3001`

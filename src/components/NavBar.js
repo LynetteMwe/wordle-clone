@@ -12,15 +12,14 @@ class NavBar extends Component {
   return (
    <nav style = {{background:theme.ui, color:theme.syntax, padding:'5px'}}>    
     <h4>Wordle</h4> 
-    <ThemeToggle/>
-
-              
+    <ThemeToggle/>             
    </nav>
   );
  }
 }
  
 export default NavBar;
+
 // const NavBar = () => {
 //  const {isLightTheme, light, dark} = useContext(ThemeContext)
 //  const theme = isLightTheme ? light: dark
