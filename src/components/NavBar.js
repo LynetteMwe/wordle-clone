@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import { AppBar } from '@mui/material';
 import { ThemeContext } from '../contexts/ThemeContext';
 import ThemeToggle from './ThemeToggle';
 
