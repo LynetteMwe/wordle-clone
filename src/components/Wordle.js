@@ -4,21 +4,29 @@ import React, { useEffect } from 'react'
 import useWordle from '../hooks/useWordle'
 import Grid from './Grid'
 import Keypad from './Keypad'
+ 
 
 export default function Wordle({solution}) {
  const {currentGuess, handleKeyUp, guesses, isCorrect, usedKeys, turn } = useWordle(solution)
+
  
  useEffect(()=>{
   window.addEventListener('keyup', handleKeyUp)
 
+  //detach the keyUp event listener once turns are exhausted and once the answer is right
+  if (isCorrect){
+    setTimeout(()=>alert('Correct'), 2000)
+    window.removeEventListener('keyup', handleKeyUp)
+  }
+
+  if(turn > 5){
+    setTimeout(()=>alert('You lost! \nThe solution is ' + solution.toUpperCase()), 2000)
+    window.removeEventListener('keyup', handleKeyUp)
+  }
+
   return () => window.removeEventListener('keyup', handleKeyUp)
 
- }, [handleKeyUp])
-
- useEffect(()=>{
-  console.log(guesses, turn, isCorrect)
-
- },[guesses, turn, isCorrect])
+ }, [handleKeyUp, isCorrect, turn, solution])
 
 
   return (

@@ -92,7 +92,6 @@ body {
   transition: all 0.3s ease-in;
 }
 
-
 /*animations*/
 @keyframes anim-flip{
   0%{
