@@ -2,10 +2,9 @@
 The Wordle-clone game was created using React-JS , Node JS(Express) and used JSON server and MYSQL to store data.
 
 ## Installing dependencies
-After cloning the repo/code, you'll need to run `npm install` in the frontend and backend directory to install any project dependencies first.
+After cloning the repo/code, you'll need to run `npm install` in the project and backend directory to install any project dependencies first.
 
 ## Client side
-### `cd frontend`
 ### `npm install`
 
 ## Server side
@@ -14,7 +13,7 @@ After cloning the repo/code, you'll need to run `npm install` in the frontend an
 
 ## Available Scripts
 
-On the `client side`, to start the servers, you can run these in the frontend directory:
+On the `client side`, to start the servers, you can run these in the `project directory`:
 
 ### `npm start`
 
@@ -38,7 +37,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-On the `server side`, to start the server, you can run this in the backend directory:
+On the `server side`, to start the server, you can run this in the `backend directory`:
 
 ### `npm start`
 
