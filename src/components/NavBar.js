@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { ThemeContext } from '../contexts/ThemeContext';
-import ThemeToggle from './ThemeToggle';
+// import ThemeToggle from './ThemeToggle';
 
 class NavBar extends Component {
  static contextType = ThemeContext
@@ -11,7 +11,7 @@ class NavBar extends Component {
   return (
    <nav style = {{background:theme.ui, color:theme.syntax, padding:'5px'}}>    
     <h4>Wordle</h4> 
-    <ThemeToggle/>             
+    {/* <ThemeToggle/>              */}
    </nav>
   );
  }
